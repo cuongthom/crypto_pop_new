@@ -10,7 +10,7 @@ function Home() {
       <HeaderPage/>
       <img src="../../img/banner.06d067e1.png" />
       <section className="px-14">
-        <h2 className="py-10 text-3xl font-bold">Crypto Pops Society</h2>
+        <h2 className="py-10 text-3xl font-bold">Crypto Pops Societyyyyyyyy</h2>
         <p className="text-slate-500 text-xl">
           The Crypto Pops Society is a collection of 5.000 unique Pops with
           64×64 pixel art images, generated algorithmically on the Binance Smart
