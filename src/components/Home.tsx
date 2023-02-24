@@ -1,4 +1,4 @@
-import "../App.css";
+// import "../App.css";
 import { useConnection } from "../states/connection";
 import HeaderPage from "./header/HeaderPage";
 
