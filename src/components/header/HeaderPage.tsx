@@ -30,7 +30,7 @@ function HeaderPage() {
             <Link to="/">
               <img
                 className="w-12 h-8 px-2 w-60 h-10"
-                src="../../public/img/Monnrfys.png"
+                src="../../img/Monnrfys.png"
                 alt="ETH"
               />
             </Link>

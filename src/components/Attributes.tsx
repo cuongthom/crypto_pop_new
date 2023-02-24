@@ -8,8 +8,8 @@ import { useConnection } from '../states/connection';
 import { AddressMini } from '../utils';
 import HeaderPage from './header/HeaderPage';
 function Attributes() {
-  const { isActive, activate, deActivate } = useWeb3();
-  const { connection } = useConnection();
+  const {  deActivate } = useWeb3();
+
 
   const items: MenuProps["items"] = [
     {
