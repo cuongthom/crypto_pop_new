@@ -60,7 +60,7 @@ function BuyNftMarket() {
               <Link to="/">
                 <img
                   className="w-12 h-8 px-2 w-60 h-10"
-                  src="../../public/img/Monnrfys.png"
+                  src="../../img/Monnrfys.png"
                   alt="ETH"
                 />
               </Link>
@@ -141,7 +141,7 @@ function BuyNftMarket() {
                     <div className="flex">
                       <img
                         className="w-6 py-4"
-                        src="../../../public/img/ETH2.png"
+                        src="../../../img/ETH2.png"
                       />
                       <p className="text-black py-4 text-2xl px-2 font-bold">
                         {item[3]} BNB

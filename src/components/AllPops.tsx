@@ -107,7 +107,7 @@ function AllPops() {
                       </div>
                     </div>
                     <div  className="flex">
-                      <img className="w-4 h-5" src="../../public/img/ETH2.png" />
+                      <img className="w-4 h-5" src="../../img/ETH2.png" />
                       <p className="text-black px-4 font-bold text-xl">
                         {item?.price} BNB
                       </p>
@@ -159,7 +159,7 @@ function AllPops() {
                         {/* <div>ox...132</div> */}
                       </div>
                       <div className="flex">
-                        <img className="w-4" src="../../public/img/ETH2.png" />
+                        <img className="w-4" src="../../img/ETH2.png" />
                         <p className="text-black font-bold px-4 text-xl">
                           {item[3]} BNB
                         </p>
@@ -183,7 +183,7 @@ function AllPops() {
           <div className="flex border-2 border-black">
             <img
               className="w-12 px-2"
-              src="../../public/img/free-search-icon-3076-thumb.png"
+              src="../../img/free-search-icon-3076-thumb.png"
             />
             <input
               type="text"

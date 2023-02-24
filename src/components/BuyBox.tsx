@@ -70,7 +70,7 @@ function BuyBox() {
               </p>
               <p className="text-black text-xl">Price</p>
               <div className="flex py-4">
-                <img className="w-10" src="../../public/img/ETH2.png" />
+                <img className="w-10" src="../../img/ETH2.png" />
                 <p className="text-black text-3xl px-2 font-bold">
                   {price?.priceBuyBox} BNB
                 </p>
