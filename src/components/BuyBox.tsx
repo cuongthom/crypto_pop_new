@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {  Skeleton } from "antd";
+import { useEffect, useState } from "react";
+import { Skeleton } from "antd";
 import useWeb3 from "../hooks/useWeb3";
 import useBuyBox from "../hooks/useBuyBox";
 import { toast } from "react-hot-toast";
@@ -7,22 +7,25 @@ import HeaderPage from "./header/HeaderPage";
 import { useNavigate } from "react-router-dom";
 function BuyBox() {
   const { isActive } = useWeb3();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [price , setPrice] = useState<any[]>([]);
+  const [price, setPrice] = useState<any>(null);
+  console.log("price", price);
+
   const { priceBox, buyBox } = useBuyBox();
-  console.log("price",price)
+
   useEffect(() => {
     priceBuyBox();
   }, []);
+
   const priceBuyBox = async () => {
-    if(!isActive){
-      navigate("/")
+    if (!isActive) {
+      navigate("/");
     }
     try {
       setLoading(true);
-      const res = await priceBox();
-      setPrice(res);
+      const resPrice = await priceBox();
+      setPrice(resPrice);
     } catch (err) {
       console.log(err);
     } finally {
@@ -32,14 +35,12 @@ function BuyBox() {
   const handleFinish = async () => {
     const buyBoxToContract = new Promise(async (resolve, reject) => {
       try {
-        await buyBox( price?.getPriceBox, 1);
+        await buyBox(price?.getPriceBox, 1);
         await new Promise((resolve) => setTimeout(resolve, 5000));
-        resolve(res);
+        resolve("success");
       } catch (err) {
         reject(err);
-      } finally {
-        
-      }
+      } 
     });
     await toast.promise(buyBoxToContract, {
       loading: "Selling...",
@@ -50,9 +51,9 @@ function BuyBox() {
 
   return (
     <>
-     <HeaderPage/>
+      <HeaderPage />
       <section className="px-14 text-xl ">
-        <h2 className="py-5">Cryptopops | Buy box</h2>
+        <h2 className="py-5">CryptoPops | Buy box</h2>
         <div className="flex ">
           <div className="w-100 w-1/2">
             <video height="auto" className="m-0 ">
@@ -70,10 +71,15 @@ function BuyBox() {
               <p className="text-black text-xl">Price</p>
               <div className="flex py-4">
                 <img className="w-10" src="../../public/img/ETH2.png" />
-                <p className="text-black text-3xl px-2 font-bold">{price?.mintPrice} BNB</p>
+                <p className="text-black text-3xl px-2 font-bold">
+                  {price?.priceBuyBox} BNB
+                </p>
               </div>
-              <div onClick={handleFinish} className="text-center bg-black rounded-lg">
-                <button  type="button" className="text-white py-2 text-2xl">
+              <div
+                onClick={handleFinish}
+                className="text-center bg-black rounded-lg"
+              >
+                <button type="button" className="text-white py-2 text-2xl">
                   BUY NOW
                 </button>
               </div>

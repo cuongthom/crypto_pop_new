@@ -1,5 +1,3 @@
-
-
 import { useConnection } from "../states/connection";
 import BuyBoxContract from "../contractPorts/BuyBoxContract";
 import { BigNumber, ethers } from "ethers";
@@ -17,10 +15,10 @@ function useBuyBox() {
     const address = await signer.getAddress();
     const boxContract = new BuyBoxContract(provider, address);
     const getPriceBox = await boxContract.getBlindBoxPrice();
-    console.log("getPriceBox",getPriceBox);
-    const mintPrice = parseFloat(ethers.utils.formatEther(getPriceBox));
-    return {mintPrice, getPriceBox};
+    const priceBuyBox = parseFloat(ethers.utils.formatEther(getPriceBox));
+    return {priceBuyBox, getPriceBox};
   };
+
   const buyBox = async (price: BigNumber, quantity: number) => {
     if (!provider) {
       throw new Error("Meta mask not installed or not connected");
